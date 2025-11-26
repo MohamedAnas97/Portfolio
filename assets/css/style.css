@@ -16008,7 +16008,119 @@ Section Head
 .custom-btn:hover i {
   transform: rotate(0deg);
 }
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    padding: 15px 0px;
+    margin: auto;
+  }
 
+  /* Style for each skill button */
+  .skill-btn.skill-modern-button {
+    position: relative;
+    border: 1px solid #0ba0c5a7;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    background: transparent;
+  }
+
+  .skill-btn.skill-modern-button .btn-bg,
+  .skill-btn.skill-modern-button .btn-bg-hover {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: -1;
+  }
+
+  .skill-btn.skill-modern-button .btn-bg-hover {
+    opacity: 0;
+  }
+
+  .skill-btn.skill-modern-button .btn-hack {
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0) padding-box;
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: 1;
+  }
+
+  .skill-btn.skill-modern-button .btn-hack::after {
+    content: "";
+    position: absolute;
+    width: 500%;
+    height: 500%;
+    background: conic-gradient(
+      from 148deg,
+      transparent 46%,
+      #04a9ceff 50%,
+      transparent 54%
+    );
+    z-index: 1;
+    border-radius: inherit;
+    animation: animate 4s linear infinite;
+  }
+
+  .skill-btn.skill-modern-button:hover {
+    background: transparent;
+  }
+
+  .skill-btn.skill-modern-button:hover .btn-hack::after {
+    background: conic-gradient(
+      from 148deg,
+      transparent 46%,
+      #139bfd 50%,
+      transparent 54%
+    );
+  }
+
+  .skill-btn.skill-modern-button:hover .btn-bg-hover {
+    opacity: 1;
+  }
+
+  .btn-text {
+    position: relative;
+    z-index: 2;
+  }
+
+  .btn-icon {
+    position: relative;
+    z-index: 2;
+    margin-left: 8px;
+  }
+
+  @keyframes animate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 .tmp-btn.tmp-modern-button {
   position: relative;
   border: 1px solid var(--color-border-2);

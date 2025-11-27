@@ -16009,30 +16009,32 @@ Section Head
   transform: rotate(0deg);
 }
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 20px;
-    padding: 15px 0px;
-    margin: auto;
-  }
-
-  /* Style for each skill button */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 15px;
+  justify-content: flex-start;
+}
   .skill-btn.skill-modern-button {
+    display: inline-flex;
+    white-space: nowrap;
     position: relative;
     border: 1px solid #0ba0c5a7;
     transition: all 0.3s ease;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
+    padding: 10px 10px;
+    line-height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 48px;
     text-decoration: none;
     color: #fff;
     font-weight: 600;
     font-size: 15px;
     background: transparent;
+    
   }
 
   .skill-btn.skill-modern-button .btn-bg,

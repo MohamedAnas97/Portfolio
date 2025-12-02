@@ -889,47 +889,46 @@
 
     },
 
-    lineAnimation: function(){
-      let line_animation = document.querySelectorAll('.for-animation-inner');
-      if (line_animation.length) {
-        const parent = document.querySelector('.for-animation-inner');
-        const line1 = document.querySelector('.cta__line-1');
-        const line2 = document.querySelector('.cta__line-2');
-    
-        function animateLines() {
-          const parentHeight = parent.offsetWidth;
-    
-          // Animating the first line using Timeline
-          gsap.killTweensOf(line1);
-          gsap.set(line1, { x: 0, opacity: 0 });
-          const tl1 = gsap.timeline({
-            repeat: -1,
-            onRepeat: () => gsap.set(line1, { x: 0, opacity: 0 }),
-          });
-          tl1
-            .to(line1, { duration: 0.3, opacity: 1 })
-            .to(line1, { duration: 4, x: parentHeight, ease: 'none' }, '<')
-            .to(line1, { duration: 0.3, opacity: 0 }, 3);
-    
-          // Animating the Second Line Using Timeline
-          gsap.killTweensOf(line2);
-          gsap.set(line2, { x: 0, opacity: 0 });
-          const tl2 = gsap.timeline({
-            repeat: -1,
-            onRepeat: () => gsap.set(line2, { x: 0, opacity: 0 }),
-          });
-          tl2
-            .to(line2, { duration: 0.3, opacity: 1 })
-            .to(line2, { duration: 4, x: -parentHeight, ease: 'none' }, '<')
-            .to(line2, { duration: 0.3, opacity: 0 }, 3);
-        }
-    
-        animateLines();
-      }
-    },
+    lineAnimation: function () {
+  const blocks = document.querySelectorAll('.for-animation-inner');
 
+  blocks.forEach((parent) => {
+    const line1 = parent.querySelector('.cta__line-1');
+    const line2 = parent.querySelector('.cta__line-2');
 
+    if (!line1 || !line2) return;
 
+    function animateLines() {
+      const parentWidth = parent.offsetWidth;
+
+      // Line 1 animation
+      gsap.killTweensOf(line1);
+      gsap.set(line1, { x: 0, opacity: 0 });
+
+      gsap.timeline({
+        repeat: -1,
+        onRepeat: () => gsap.set(line1, { x: 0, opacity: 0 }),
+      })
+        .to(line1, { duration: 0.3, opacity: 1 })
+        .to(line1, { duration: 4, x: parentWidth, ease: 'none' }, '<')
+        .to(line1, { duration: 0.3, opacity: 0 }, 3);
+
+      // Line 2 animation
+      gsap.killTweensOf(line2);
+      gsap.set(line2, { x: 0, opacity: 0 });
+
+      gsap.timeline({
+        repeat: -1,
+        onRepeat: () => gsap.set(line2, { x: 0, opacity: 0 }),
+      })
+        .to(line2, { duration: 0.3, opacity: 1 })
+        .to(line2, { duration: 4, x: -parentWidth, ease: 'none' }, '<')
+        .to(line2, { duration: 0.3, opacity: 0 }, 3);
+    }
+
+    animateLines();
+  });
+}
 
 
   };
@@ -990,4 +989,24 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+emailjs.init("xwraY8iGBHm6EOXme");
 
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const params = {
+        from_name: document.getElementById("name").value,
+        from_email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value
+    };
+         emailjs.send("service_cqi2h4a", "template_4zeycew", params)
+        .then(() => {
+            alert("Message sent successfully. I’ll get back to you soon.");
+            document.getElementById("contact-form").reset(); 
+        })
+        .catch((error) => {
+            alert("Failed to send message.");
+            console.error(error);
+        });
+});

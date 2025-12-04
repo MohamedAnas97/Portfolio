@@ -15095,9 +15095,9 @@ Section Head
   margin-top: 10px;
   color: var(--color-gray);
   font-family: var(--font-secondary);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
-  line-height: 26px;
+  line-height: 24px;
 }
 @media only screen and (max-width: 767px) {
   .section-head .description br {

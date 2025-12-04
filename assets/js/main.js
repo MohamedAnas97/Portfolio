@@ -1010,3 +1010,12 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
             console.error(error);
         });
 });
+document.getElementById("downloadResume").addEventListener("click", function (e) {
+    e.preventDefault();
+    const link = document.createElement("a");
+    link.href = "assets/Web Developer-Mohamed Anas.pdf";  
+    link.download = "Web Developer-Mohamed Anas.pdf";      
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });

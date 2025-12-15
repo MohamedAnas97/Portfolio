@@ -26089,7 +26089,7 @@ Primary style
 
 .tmp-portfolio-single-card {
   text-align: left;
-  padding: 30px;
+  padding: 15px;
   position: relative;
   border-radius: 20px;
   background: var(--background-color-1);
@@ -26101,12 +26101,12 @@ Primary style
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .tmp-portfolio-single-card {
-    padding: 30px;
+    padding: 15px;
   }
 }
 @media only screen and (max-width: 479px) {
   .tmp-portfolio-single-card {
-    padding: 20px;
+    padding: 10px;
   }
 }
 .tmp-portfolio-single-card .inner .thumbnail a {
@@ -26182,13 +26182,13 @@ Primary style
   transition: var(--transition);
   color: var(--color-lightn);
   font-weight: 600;
-  font-size: 23px;
+  font-size: 20px;
   line-height: 34px;
   display: inline-block;
 }
 @media only screen and (max-width: 479px) {
   .tmp-portfolio-single-card .inner .content .title a {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 30px;
   }
 }
@@ -26206,7 +26206,7 @@ Primary style
   color: var(--color-primary);
   top: 3px;
   opacity: 1;
-  font-size: 23px;
+  font-size: 20px;
 }
 .tmp-portfolio-single-card::before {
   content: "";

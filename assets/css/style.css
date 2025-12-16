@@ -24102,7 +24102,7 @@ section.svg-container svg.radial-progress:nth-last-of-type(0) {
   left: 50%;
   transform: translate(-50%, -50%);
   transition: all 0.4s ease;
-  font-size: 22px;
+  font-size: 28px;
   color: #fff;
 }
 .ready-chatting-option label i.fas {

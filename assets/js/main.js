@@ -1019,3 +1019,11 @@ document.getElementById("downloadResume").addEventListener("click", function (e)
     link.click();
     document.body.removeChild(link);
   });
+
+  function openWhatsApp() {
+    const phoneNumber = "971527690405"; 
+    const message = "Thank you for contacting me. How can I help you today?";
+    
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  }
